@@ -52,7 +52,7 @@ My research interest includes Water Resources Engineering. I have published more
 
 # ✍🏻 Working Experience
 - *2019.01 - 2025.04 (now)*, Research Assistant, Institute for Energy, Environment and Sustainable Communities (IEESC).
-- *2017.08 - 2018.08*, Water Resources Engineer, Water Resources Bureau of Yulin.
+- *2017.08 - 2018.08*, Water Resources Engineer, Water Resources Bureau of Yulin City.
 
 # 💬 Invited Talks
 - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
