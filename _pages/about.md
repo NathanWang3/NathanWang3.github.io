@@ -47,12 +47,17 @@ My research interest includes Water Resources Engineering. I have published more
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 
 # 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2013.09 - 2017.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2019.01 - 2025.04 (now)*, Ph.D. Candidate, University of Regina, Regina, Canada
+- *2013.09 - 2017.06*, Undergraduate, Northwest A&F University, Xi'an, China
+
+# ✍🏻 Working Experience
+- *2019.01 - 2025.04 (now)*, Research Assistant, Institute for Energy, Environment and Sustainable Communities (IEESC).
+- *2017.08 - 2018.08*, Water Resources Engineer, Water Resources Bureau of Yulin.
 
 # 💬 Invited Talks
 - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
 
 # 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
+- *2019.06 - 2019.08*, Xiangjiaba Hydropower Station (Engineering Intern), China.
+- *2018.06 - 2018.08*, Baojixia Hydropower Station (Engineering Intern), China.
