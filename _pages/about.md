@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: ""
+title: "Nan (Nathan) Wang"
 excerpt: ""
 author_profile: true
 redirect_from: 
