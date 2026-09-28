@@ -176,7 +176,7 @@ h3.subhead { font-size: 1.1rem; margin-top: 2.2em; color: var(--text-2); }
   -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent 100%);
 }
 .hero-bg svg { width: 100%; height: 100%; }
-.hero-grid { position: relative; display: grid; grid-template-columns: 1fr 232px; gap: 48px; align-items: center; }
+.hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 560px) 232px; justify-content: start; gap: 56px; align-items: center; }
 .eyebrow { margin: -6px 0 14px; color: var(--text-3); font-family: var(--serif); font-size: 1.25rem; letter-spacing: .12em; }
 .hero-title { margin: 0 0 4px; font-size: 1.15rem; font-weight: 500; color: var(--text); }
 .hero-affil { margin: 0 0 18px; color: var(--text-2); }
