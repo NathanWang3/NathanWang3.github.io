@@ -70,7 +70,7 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
       year: "2026",
       title: "Embodied emission linkages and interactions of industrial aquatic heavy metals in the Yangtze River Economic Belt, China: a multi-sector multi-region factorial metabolism analysis",
       authors: "<b>N. Wang</b>, G. Huang*, M. Zhai, Y. Fu, L. Lin, B. Luo",
-      venue: { en: "Ecological Indicators, 115428", zh: "Ecological Indicators, 115428" },
+      venue: { en: "Ecological Indicators, 190, 115428", zh: "Ecological Indicators, 190, 115428" },
       note:  { en: "doi:10.1016/j.ecolind.2026.115428", zh: "doi:10.1016/j.ecolind.2026.115428" },
       link:  "https://doi.org/10.1016/j.ecolind.2026.115428",
       tags:  ["MRIO", "ENA", "Factorial analysis", "K-means"]
@@ -132,8 +132,8 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
       title: "Unveiling long-term indirect socio-economic and environmental effects of large-scale hydropower project",
       authors: "Y. Liu, G. Huang, M. Zhai, <b>N. Wang</b>, Y. Fu, X. Pan",
       venue: { en: "Science of The Total Environment, 959, 178317", zh: "Science of The Total Environment, 959, 178317" },
-      note:  { en: "doi:10.1016/j.scitotenv.2025.178317", zh: "doi:10.1016/j.scitotenv.2025.178317" },
-      link:  "https://doi.org/10.1016/j.scitotenv.2025.178317",
+      note:  { en: "doi:10.1016/j.scitotenv.2024.178317", zh: "doi:10.1016/j.scitotenv.2024.178317" },
+      link:  "https://doi.org/10.1016/j.scitotenv.2024.178317",
       tags:  ["Dynamic CGE", "Hydropower"]
     },
     // ===== 2023 =====
