@@ -13,9 +13,17 @@
   };
 
   // ---------- language ----------
-  var lang = store.get("lang");
-  if (lang !== "en" && lang !== "zh") {
-    lang = (navigator.language || "").toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
+  var lang;
+  if (S.showLangToggle === false) {
+    lang = S.defaultLang === "zh" ? "zh" : "en";
+    document.getElementById("langToggle").style.display = "none";
+  } else {
+    lang = store.get("lang");
+    if (lang !== "en" && lang !== "zh") {
+      lang = S.defaultLang === "en" || S.defaultLang === "zh"
+        ? S.defaultLang
+        : ((navigator.language || "").toLowerCase().indexOf("zh") === 0 ? "zh" : "en");
+    }
   }
   function t(v) {
     if (v == null) return "";

@@ -6,6 +6,10 @@
 
 window.SITE = {
 
+  // ---------- 语言 ----------
+  defaultLang:    "en",     // "en" | "zh" | "auto"（auto = 跟浏览器）
+  showLangToggle: false,    // false = 隐藏右上角切换按钮，整站只显示 defaultLang
+
   // ---------- 基本信息 ----------
   name:      { en: "Nan Wang",  zh: "王 楠" },
   nameAlt:   { en: "王楠",      zh: "Nan Wang" },
@@ -20,7 +24,7 @@ window.SITE = {
   github:    "https://github.com/NathanWang3",
   scholar:   "",          // 填你自己的 Google Scholar 链接（现在模板里那个是别人的）
   orcid:     "",          // 例如 https://orcid.org/0000-0000-0000-0000
-  linkedin:  "",
+  linkedin:  "https://www.linkedin.com/in/nan-w-9456521ab/",
   cvFile:    "",          // 例如 "assets/Nan_Wang_CV.pdf"，放进仓库后填这里
 
   // ---------- 关于我 ----------
@@ -61,13 +65,13 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
       tags:  ["MRIO", "ENA", "Factorial analysis", "K-means"]
     },
     {
-      status: "revision",
+      status: "published",
       year: "2026",
-      title: "Factorial socio-economic and environmental equilibrium analysis of large-scale hydropower toward sustainable development: evidence from the Xiangjiaba Hydropower Project, China",
+      title: "Factorial socio-economic and environmental equilibrium analysis of large-scale hydropower toward sustainable development: Evidence from the Xiangjiaba hydropower project, China",
       authors: "<b>N. Wang</b>, G. Huang*, M. Zhai, Y. Liu, L. Lin",
-      venue: { en: "Journal of Cleaner Production", zh: "Journal of Cleaner Production" },
-      note:  { en: "Major revision", zh: "大修中" },
-      link:  "",
+      venue: { en: "Journal of Cleaner Production, 577, 149496", zh: "Journal of Cleaner Production, 577, 149496" },
+      note:  { en: "doi:10.1016/j.jclepro.2026.149496", zh: "doi:10.1016/j.jclepro.2026.149496" },
+      link:  "https://doi.org/10.1016/j.jclepro.2026.149496",
       tags:  ["CGE", "Factorial design", "Hydropower"]
     },
     {
@@ -94,10 +98,10 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
       status: "published",
       year: "2023",
       title: "Interval multi-random factorial programming for coupled farmland and water resources management — a case study of Songhua River watershed, China",
-      authors: "<b>N. Wang</b>, G. Huang*, et al.",
+      authors: "<b>N. Wang</b>, C.Z. Huang*, M.Y. Zhai, G.H. Cheng, F. Wang, L.J. Lin, B. Luo",
       venue: { en: "Journal of Environmental Informatics Letters", zh: "Journal of Environmental Informatics Letters" },
-      note:  { en: "Article 202300099", zh: "文章号 202300099" },
-      link:  "http://www.jeiletters.org/index.php?journal=mys&page=article&op=view&path%5B%5D=202300099",
+      note:  { en: "doi:10.3808/jeil.202300099", zh: "doi:10.3808/jeil.202300099" },
+      link:  "https://doi.org/10.3808/jeil.202300099",
       tags:  ["Interval programming", "Chance constraints", "Factorial design"]
     }
   ],
@@ -147,8 +151,8 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
       period: "2019.01 – present",
       degree: { en: "Ph.D. Candidate, Environmental Systems Engineering", zh: "博士候选人，环境系统工程" },
       org:    { en: "University of Regina, Canada", zh: "里贾纳大学，加拿大" },
-      desc:   { en: "Advisor: Prof. Guohe (Gordon) Huang", zh: "导师：黄国和（Gordon Huang）教授" }
-      // 确定答辩时间后在 desc 里加一句 "Expected graduation: 2027" / "预计 2027 年毕业"
+      desc:   { en: "Advisor: Prof. Guohe (Gordon) Huang · Expected graduation: December 2026",
+                zh: "导师：黄国和（Gordon Huang）教授 · 预计 2026 年 12 月毕业" }
     },
     {
       period: "2013.09 – 2017.06",
@@ -205,5 +209,5 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
     footer: { en: "Last updated", zh: "最近更新" }
   },
 
-  lastUpdated: "2026-09-27"
+  lastUpdated: "2026-09-28"
 };
