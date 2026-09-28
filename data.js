@@ -42,14 +42,19 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
   },
 
   // ---------- 研究方向 ----------
+  // icon 可选：drop grid network dam dice nodes chart
   interests: [
-    { en: "Water–energy–economy nexus modelling",              zh: "水—能—经济纽带系统建模" },
-    { en: "Computable general equilibrium (CGE / dynamic CGE)", zh: "可计算一般均衡（CGE / 动态 CGE）" },
-    { en: "Multi-regional input–output & virtual water",        zh: "多区域投入产出与虚拟水" },
-    { en: "Socio-economic & environmental impact of hydropower", zh: "水电工程社会经济与环境影响评估" },
-    { en: "Factorial design & uncertainty analysis",             zh: "因子设计与不确定性分析" },
-    { en: "Ecological network analysis of pollutant flows",     zh: "污染物流动的生态网络分析" }
+    { icon: "drop",    en: "Water–energy–economy nexus modelling",              zh: "水—能—经济纽带系统建模" },
+    { icon: "chart",   en: "Computable general equilibrium (CGE / dynamic CGE)", zh: "可计算一般均衡（CGE / 动态 CGE）" },
+    { icon: "grid",    en: "Multi-regional input–output & virtual water",        zh: "多区域投入产出与虚拟水" },
+    { icon: "dam",     en: "Socio-economic & environmental impact of hydropower", zh: "水电工程社会经济与环境影响评估" },
+    { icon: "dice",    en: "Factorial design & uncertainty analysis",             zh: "因子设计与不确定性分析" },
+    { icon: "network", en: "Ecological network analysis of pollutant flows",     zh: "污染物流动的生态网络分析" }
   ],
+
+  // ---------- 引用指标（留空不显示；从 Google Scholar 抄） ----------
+  hIndex:    "",
+  citations: "",
 
   // ---------- 论文 ----------
   // status: published | accepted | revision | review | prep
@@ -91,7 +96,7 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
       title: "Assessing the water-energy-environment nexus of multipurpose large-scale hydropower projects: a dynamic function-wise factorial equilibrium analysis model through 2060",
       authors: "<b>N. Wang</b>, G. Huang*, M. Zhai, Y. Liu, L. Lin",
       venue: { en: "Energy", zh: "Energy" },
-      note:  { en: "Major revision", zh: "大修中" },
+      note:  { en: "", zh: "" },
       link:  "",
       tags:  ["Dynamic CGE", "WEE nexus", "Hydropower"]
     },
@@ -101,7 +106,7 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
       title: "Analyzing the implications of interprovincial virtual water trade for regional water scarcity in China: an interactive blue-grey virtual water evaluation model",
       authors: "<b>N. Wang</b>, G. Huang*, M. Zhai, Y. Fu, L. Lin, G. Cheng",
       venue: { en: "Journal of Environmental Sciences", zh: "Journal of Environmental Sciences" },
-      note:  { en: "Under review", zh: "审稿中" },
+      note:  { en: "", zh: "" },
       link:  "",
       tags:  ["MRIO", "Virtual water", "Water footprint"]
     },
@@ -272,6 +277,14 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
       contact:      { en: "Contact",      zh: "联系" }
     },
     inProgress:  { en: "Work in progress", zh: "在研工作" },
+    firstAuthor: { en: "First author", zh: "第一作者" },
+    stats: {
+      publications: { en: "Publications",        zh: "已发表" },
+      firstAuthor:  { en: "First-author",        zh: "第一作者" },
+      journals:     { en: "Journals",            zh: "期刊" },
+      hIndex:       { en: "h-index",             zh: "h 指数" },
+      citations:    { en: "Citations",           zh: "引用" }
+    },
     downloadCV:  { en: "Download CV", zh: "下载简历" },
     emailMe:     { en: "Email", zh: "邮件" },
     statusLabel: {

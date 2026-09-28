@@ -1,6 +1,7 @@
 /* ============================================================
    Renders window.SITE (data.js) into index.html.
-   Handles EN/中文 toggle, dark mode, mobile nav, active section.
+   Handles EN/中文 toggle, dark mode, mobile nav, active section,
+   stats strip, reveal-on-scroll, back-to-top.
    ============================================================ */
 (function () {
   "use strict";
@@ -52,6 +53,17 @@
     file:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 13h6M9 17h6"/></svg>'
   };
 
+  // research-interest icons (keyed by data.js `icon`)
+  var RICON = {
+    drop:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>',
+    grid:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 12h16M12 4v16"/></svg>',
+    network: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 11l10-4M7 13l10 4"/></svg>',
+    dam:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 20V9l6-5v16M10 20h10v-5H10M4 20h16"/><path d="M13 12h4" stroke-linecap="round"/></svg>',
+    dice:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="15" r="1.2" fill="currentColor"/><circle cx="15" cy="9" r="1.2" fill="currentColor"/><circle cx="9" cy="15" r="1.2" fill="currentColor"/></svg>',
+    nodes:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><circle cx="12" cy="13" r="2"/><path d="M12 7v4M10.5 14.5L6.5 16.5M13.5 14.5l4 2"/></svg>',
+    chart:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20h16M7 16V9M12 16V5M17 16v-6"/></svg>'
+  };
+
   function linkButtons(primaryFirst) {
     var out = [];
     if (S.cvFile)   out.push({ href: S.cvFile, label: t(S.ui.downloadCV), icon: ICON.file, primary: true, ext: false });
@@ -66,6 +78,26 @@
       if (b.ext) { a.target = "_blank"; a.rel = "noopener"; }
       return a;
     });
+  }
+
+  // ---------- derived stats ----------
+  function isFirstAuthor(p) { return /^\s*<b>/.test(p.authors || ""); }
+  function computeStats() {
+    var pubs = (S.publications || []).filter(function (p) { return p.status === "published" || p.status === "accepted"; });
+    var journals = {};
+    pubs.forEach(function (p) {
+      if ((p.tags || []).indexOf("Conference abstract") >= 0 || /abstract/i.test(t(p.note))) return;
+      var v = t(p.venue).split(",")[0].trim();
+      if (v) journals[v] = 1;
+    });
+    var out = [
+      { n: pubs.length, l: S.ui.stats.publications },
+      { n: pubs.filter(isFirstAuthor).length, l: S.ui.stats.firstAuthor },
+      { n: Object.keys(journals).length, l: S.ui.stats.journals }
+    ];
+    if (S.hIndex) out.push({ n: S.hIndex, l: S.ui.stats.hIndex });
+    if (S.citations) out.push({ n: S.citations, l: S.ui.stats.citations });
+    return out;
   }
 
   // ---------- render ----------
@@ -83,18 +115,32 @@
     var ha = document.getElementById("heroActions"); ha.innerHTML = "";
     linkButtons(true).forEach(function (a) { ha.appendChild(a); });
 
+    // stats
+    var st = document.getElementById("stats"); st.innerHTML = "";
+    computeStats().forEach(function (s) {
+      var d = el("div", "stat");
+      d.appendChild(el("div", "stat-n", esc(s.n)));
+      d.appendChild(el("div", "stat-l", esc(t(s.l))));
+      st.appendChild(d);
+    });
+
     // about
     var about = document.getElementById("aboutText"); about.innerHTML = "";
     t(S.about).split(/\n\s*\n/).forEach(function (p) { if (p.trim()) about.appendChild(el("p", null, esc(p.trim()))); });
 
     // interests
     var ig = document.getElementById("interests"); ig.innerHTML = "";
-    (S.interests || []).forEach(function (i) { ig.appendChild(el("li", null, esc(t(i)))); });
+    (S.interests || []).forEach(function (i) {
+      var li = el("li");
+      li.appendChild(el("span", "interest-icon", RICON[i.icon] || RICON.chart));
+      li.appendChild(el("span", null, esc(t(i))));
+      ig.appendChild(li);
+    });
 
     // publications
     var pl = document.getElementById("pubList"); pl.innerHTML = "";
     (S.publications || []).forEach(function (p) {
-      var li = el("li");
+      var li = el("li", "st-" + (p.status || "prep"));
       li.appendChild(el("div", "pub-year", esc(p.year || "")));
       var body = el("div");
       var title = p.link
@@ -105,6 +151,7 @@
       body.appendChild(el("p", "pub-venue", "<em>" + esc(t(p.venue)) + "</em>"));
       var meta = el("div", "pub-meta");
       if (p.status) meta.appendChild(el("span", "status status-" + p.status, esc(t(S.ui.statusLabel[p.status]))));
+      if (isFirstAuthor(p)) meta.appendChild(el("span", "first-author", esc(t(S.ui.firstAuthor))));
       if (t(p.note)) meta.appendChild(el("span", "pub-note", esc(t(p.note))));
       (p.tags || []).forEach(function (g) { meta.appendChild(el("span", "tag", esc(g))); });
       body.appendChild(meta);
@@ -151,6 +198,7 @@
     linkButtons(false).forEach(function (a) { cl.appendChild(a); });
 
     document.getElementById("year").textContent = new Date().getFullYear();
+    armReveal();
   }
 
   document.getElementById("langToggle").addEventListener("click", function () {
@@ -194,6 +242,30 @@
     }, { rootMargin: "-40% 0px -55% 0px" });
     sections.forEach(function (s) { io.observe(s); });
   }
+
+  // ---------- reveal on scroll ----------
+  var revealIO = null;
+  function armReveal() {
+    var targets = document.querySelectorAll(".section > .container > *, .pub-list > li, .interest-grid > li, .tl-item");
+    if (!("IntersectionObserver" in window)) { targets.forEach(function (n) { n.classList.add("in"); }); return; }
+    if (!revealIO) {
+      revealIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); revealIO.unobserve(en.target); } });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    }
+    targets.forEach(function (n) {
+      if (n.classList.contains("in")) return;
+      n.classList.add("reveal");
+      revealIO.observe(n);
+    });
+  }
+
+  // ---------- back to top ----------
+  var toTop = document.getElementById("toTop");
+  window.addEventListener("scroll", function () {
+    toTop.classList.toggle("show", window.scrollY > 600);
+  }, { passive: true });
+  toTop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
 
   render();
 })();
