@@ -149,7 +149,7 @@ h3.subhead { font-size: 1.1rem; margin-top: 2.2em; color: var(--text-2); }
 /* ---------- hero ---------- */
 .hero { padding: 72px 0 56px; }
 .hero-grid { display: grid; grid-template-columns: 1fr 220px; gap: 48px; align-items: center; }
-.eyebrow { margin: 0 0 6px; color: var(--text-3); font-family: var(--serif); font-size: 1.1rem; letter-spacing: .08em; }
+.eyebrow { margin: -6px 0 14px; color: var(--text-3); font-family: var(--serif); font-size: 1.25rem; letter-spacing: .12em; }
 .hero-title { margin: 0 0 4px; font-size: 1.15rem; font-weight: 500; color: var(--text); }
 .hero-affil { margin: 0 0 18px; color: var(--text-2); }
 .hero-tagline { margin: 0 0 26px; font-family: var(--serif); font-style: italic; font-size: 1.18rem; color: var(--text-2); max-width: 36em; }

@@ -11,8 +11,8 @@ window.SITE = {
   showLangToggle: false,    // false = 隐藏右上角切换按钮，整站只显示 defaultLang
 
   // ---------- 基本信息 ----------
-  name:      { en: "Nan Wang",  zh: "王 楠" },
-  nameAlt:   { en: "王楠",      zh: "Nan Wang" },
+  name:      { en: "Nan (Nathan) Wang",  zh: "王 楠" },
+  nameAlt:   { en: "王楠",               zh: "Nan (Nathan) Wang" },
   title:     { en: "Ph.D. Candidate · Environmental Systems Engineering",
                zh: "博士候选人 · 环境系统工程" },
   affil:     { en: "Institute for Energy, Environment and Sustainable Communities (IEESC)<br>University of Regina, Canada",
@@ -22,7 +22,7 @@ window.SITE = {
 
   email:     "nwl603@uregina.ca",
   github:    "https://github.com/NathanWang3",
-  scholar:   "",          // 填你自己的 Google Scholar 链接（现在模板里那个是别人的）
+  scholar:   "https://scholar.google.com/citations?user=iLu47w0AAAAJ",
   orcid:     "",          // 例如 https://orcid.org/0000-0000-0000-0000
   linkedin:  "https://www.linkedin.com/in/nan-w-9456521ab/",
   cvFile:    "",          // 例如 "assets/Nan_Wang_CV.pdf"，放进仓库后填这里
@@ -54,16 +54,7 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
   // ---------- 论文 ----------
   // status: published | accepted | revision | review | prep
   publications: [
-    {
-      status: "accepted",
-      year: "2026",
-      title: "Embodied emission linkages and interactions of industrial aquatic heavy metals in the Yangtze River Economic Belt, China: a multi-sector multi-region factorial metabolism analysis",
-      authors: "<b>N. Wang</b>, G. Huang*, M. Zhai, Y. Fu, L. Lin, B. Luo",
-      venue: { en: "Ecological Indicators, 115428", zh: "Ecological Indicators, 115428" },
-      note:  { en: "Accepted 28 Aug 2026 · in press", zh: "2026-08-28 接收 · 在线出版中" },
-      link:  "https://www.sciencedirect.com/science/article/pii/S1470160X26008290",
-      tags:  ["MRIO", "ENA", "Factorial analysis", "K-means"]
-    },
+    // ===== 2026 =====
     {
       status: "published",
       year: "2026",
@@ -73,6 +64,26 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
       note:  { en: "doi:10.1016/j.jclepro.2026.149496", zh: "doi:10.1016/j.jclepro.2026.149496" },
       link:  "https://doi.org/10.1016/j.jclepro.2026.149496",
       tags:  ["CGE", "Factorial design", "Hydropower"]
+    },
+    {
+      status: "published",
+      year: "2026",
+      title: "Embodied emission linkages and interactions of industrial aquatic heavy metals in the Yangtze River Economic Belt, China: a multi-sector multi-region factorial metabolism analysis",
+      authors: "<b>N. Wang</b>, G. Huang*, M. Zhai, Y. Fu, L. Lin, B. Luo",
+      venue: { en: "Ecological Indicators, 115428", zh: "Ecological Indicators, 115428" },
+      note:  { en: "doi:10.1016/j.ecolind.2026.115428", zh: "doi:10.1016/j.ecolind.2026.115428" },
+      link:  "https://doi.org/10.1016/j.ecolind.2026.115428",
+      tags:  ["MRIO", "ENA", "Factorial analysis", "K-means"]
+    },
+    {
+      status: "published",
+      year: "2026",
+      title: "Collaborative governance of carbon mitigation, energy transition, and material management: A factorial non-deterministic carbon-energy-metal nexus optimization model",
+      authors: "L. Lin, G. Huang, <b>N. Wang</b>",
+      venue: { en: "Applied Energy, 412, 127648", zh: "Applied Energy, 412, 127648" },
+      note:  { en: "doi:10.1016/j.apenergy.2026.127648", zh: "doi:10.1016/j.apenergy.2026.127648" },
+      link:  "https://doi.org/10.1016/j.apenergy.2026.127648",
+      tags:  ["Optimization", "Carbon–energy–metal nexus", "Factorial design"]
     },
     {
       status: "revision",
@@ -94,15 +105,79 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
       link:  "",
       tags:  ["MRIO", "Virtual water", "Water footprint"]
     },
+    // ===== 2025 =====
+    {
+      status: "published",
+      year: "2025",
+      title: "Development of a factorial hydroengineering equilibrium analysis model for analyzing direct and indirect socio-economic and environmental effects of large-scale hydropower projects",
+      authors: "Y. Liu, G. Huang, M. Zhai, <b>N. Wang</b>, X. Zheng, X. Pan",
+      venue: { en: "Energy, 333, 137343", zh: "Energy, 333, 137343" },
+      note:  { en: "doi:10.1016/j.energy.2025.137343", zh: "doi:10.1016/j.energy.2025.137343" },
+      link:  "https://doi.org/10.1016/j.energy.2025.137343",
+      tags:  ["CGE", "Factorial design", "Hydropower"]
+    },
+    {
+      status: "published",
+      year: "2025",
+      title: "Collaborative management for decarbonizing Canada's multi-regional electric power systems by 2050: A factorial non-deterministic multi-stage bi-level programming model",
+      authors: "L. Lin, G. Huang, B. Luo, Y. Liu, <b>N. Wang</b>",
+      venue: { en: "Energy Conversion and Management, 339, 119975", zh: "Energy Conversion and Management, 339, 119975" },
+      note:  { en: "doi:10.1016/j.enconman.2025.119975", zh: "doi:10.1016/j.enconman.2025.119975" },
+      link:  "https://doi.org/10.1016/j.enconman.2025.119975",
+      tags:  ["Bi-level programming", "Power systems", "Decarbonization"]
+    },
+    {
+      status: "published",
+      year: "2025",
+      title: "Unveiling long-term indirect socio-economic and environmental effects of large-scale hydropower project",
+      authors: "Y. Liu, G. Huang, M. Zhai, <b>N. Wang</b>, Y. Fu, X. Pan",
+      venue: { en: "Science of The Total Environment, 959, 178317", zh: "Science of The Total Environment, 959, 178317" },
+      note:  { en: "doi:10.1016/j.scitotenv.2025.178317", zh: "doi:10.1016/j.scitotenv.2025.178317" },
+      link:  "https://doi.org/10.1016/j.scitotenv.2025.178317",
+      tags:  ["Dynamic CGE", "Hydropower"]
+    },
+    // ===== 2023 =====
     {
       status: "published",
       year: "2023",
       title: "Interval multi-random factorial programming for coupled farmland and water resources management — a case study of Songhua River watershed, China",
       authors: "<b>N. Wang</b>, C.Z. Huang*, M.Y. Zhai, G.H. Cheng, F. Wang, L.J. Lin, B. Luo",
-      venue: { en: "Journal of Environmental Informatics Letters", zh: "Journal of Environmental Informatics Letters" },
+      venue: { en: "Journal of Environmental Informatics Letters, 9(1), 49–59", zh: "Journal of Environmental Informatics Letters, 9(1), 49–59" },
       note:  { en: "doi:10.3808/jeil.202300099", zh: "doi:10.3808/jeil.202300099" },
       link:  "https://doi.org/10.3808/jeil.202300099",
       tags:  ["Interval programming", "Chance constraints", "Factorial design"]
+    },
+    // ===== 2021 =====
+    {
+      status: "published",
+      year: "2021",
+      title: "Characterization of canola growth and in-vivo element fate in Canadian prairie under the interferences of tillage and residue treatment",
+      authors: "J. Huang, G. Huang*, X. Xin, D. Halstead, K. Gaetz, L. Benmerrouche, Y. Wu, <b>N. Wang</b>, Y. Fu, J. Zhang",
+      venue: { en: "Journal of Cleaner Production, 320, 128707", zh: "Journal of Cleaner Production, 320, 128707" },
+      note:  { en: "doi:10.1016/j.jclepro.2021.128707", zh: "doi:10.1016/j.jclepro.2021.128707" },
+      link:  "https://doi.org/10.1016/j.jclepro.2021.128707",
+      tags:  ["Agriculture", "Field experiment"]
+    },
+    {
+      status: "published",
+      year: "2021",
+      title: "The optimization of canola crop production through wheat residue management within a Western Canadian context — A case study of Saint-Front, Saskatchewan",
+      authors: "X. Xin, G. Huang*, D. Halstead, K. Gaetz, L. Benmerrouche, J. Huang, Y. Wu, J. Zhang, Y. Fu, <b>N. Wang</b>",
+      venue: { en: "Sustainability, 13(18), 10459", zh: "Sustainability, 13(18), 10459" },
+      note:  { en: "doi:10.3390/su131810459", zh: "doi:10.3390/su131810459" },
+      link:  "https://doi.org/10.3390/su131810459",
+      tags:  ["Agriculture", "Residue management"]
+    },
+    // ===== 2020 =====
+    {
+      status: "published",
+      year: "2020",
+      title: "Nonstationary regional flood inundation projection under climate change: a case study of Athabasca River Basin, Canada",
+      authors: "G. Cheng, G. Huang, F. Wang, <b>N. Wang</b>, J. Zhang, K. Li, C. Dong",
+      venue: { en: "AGU Fall Meeting 2020, Abstract H197-0013", zh: "AGU Fall Meeting 2020, 摘要 H197-0013" },
+      note:  { en: "Conference abstract", zh: "会议摘要" },
+      link:  "",
+      tags:  ["Flood", "Climate change", "Hydrology"]
     }
   ],
 
