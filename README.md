@@ -1,72 +1,55 @@
+# NathanWang3.github.io
 
-<h1 align="center">
-AcadHomepage
-</h1>
+Nan Wang 的个人学术主页。纯静态（HTML + CSS + JS），无需 Jekyll / Node 构建，推上 GitHub 即可访问。
 
-<div align="center">
+## 结构
 
-[![](https://img.shields.io/github/stars/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/forks/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/issues/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/license/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io/blob/main/LICENSE)  | [中文文档](./docs/README-zh.md) 
-</div>
+```
+index.html        页面骨架（不用改）
+data.js           ★ 所有内容都在这里，中英文各一份
+assets/style.css  样式
+assets/app.js     渲染逻辑、语言切换、深色模式
+assets/photo.jpg  头像（自己放一张，正方形 ≥ 600px；没有则显示首字母占位）
+assets/*.pdf      简历 PDF（放好后在 data.js 的 cvFile 填路径）
+.nojekyll         告诉 GitHub Pages 不要用 Jekyll 处理
+```
 
-<p align="center">A Modern and Responsive Academic Personal Homepage</p>
+## 更新内容
 
-<p align="center">
-    <br>
-    <img src="docs/screenshot.png" width="100%"/>
-    <br>
-</p>
+只改 `data.js`。每个字段形如 `{ en: "...", zh: "..." }`；留空字符串的字段不显示。
 
-Some examples:
-- [Demo Page](https://rayeren.github.io/acad-homepage.github.io/)
-- [Personal Homepage of the author](https://rayeren.github.io/)
+- 新论文：在 `publications` 数组里加一项，`status` 取 `published / accepted / revision / review / prep`
+- 论文从审稿中变为接收：改 `status`、`note`、补 `link`
+- 更新日期：改底部 `lastUpdated`
 
-## Key Features
-- **Automatically update google scholar citations**: using the google scholar crawler and github action, this REPO can update the author citations and publication citations automatically.
-- **Support Google analytics**: you can trace the traffics of your homepage by easy configuration.
-- **Responsive**: this homepage automatically adjust for different screen sizes and viewports.
-- **Beautiful and Simple Design**: this homepage is beautiful and simple, which is very suitable for academic personal homepage.
-- **SEO**: search Engine Optimization (SEO) helps search engines find the information you publish on your homepage easily, then rank it against similar websites.
+## 本地预览
 
-## Quick Start
+直接双击 `index.html` 就能看（不依赖服务器）。想用本地服务器：
 
-1. Fork this REPO and rename to `USERNAME.github.io`, where `USERNAME` is your github USERNAME.
-1. Configure the google scholar citation crawler:
-    1. Find your google scholar ID in the url of your google scholar page (e.g., https://scholar.google.com/citations?user=SCHOLAR_ID), where `SCHOLAR_ID` is your google scholar ID.
-    1. Set GOOGLE_SCHOLAR_ID variable to your google scholar ID in `Settings -> Secrets -> Actions -> New repository secret` of the REPO website with `name=GOOGLE_SCHOLAR_ID` and `value=SCHOLAR_ID`.
-    1. Click the `Action` of the REPO website and enable the workflows by clicking *"I understand my workflows, go ahead and enable them"*. This github action will generate google scholar citation stats data `gs_data.json` in `google-scholar-stats` branch of your REPO. When you update your main branch, this action will be triggered. This action will also be trigger 08:00 UTC everyday.
-1. Generate favicon using [favicon-generator](https://redketchup.io/favicon-generator) and download all generated files to `REPO/images`.
-1. Modify the configuration of your homepage `_config.yml`:
-    1. `title`: the title of your homepage
-    1. `description`: the description of your homepage
-    1. `repository`: USER_NAME/REPO_NAME  
-    1. `google_analytics_id` (optional): google analytics ID
-    1. SEO Related keys (optional): get these keys from search engine consoles (e.g. Google, Bing and Baidu) and paste here.
-    1. `author`: the author information of this homepage, including some other websites, emails, city and univeristy.
-    1. More configuration details are described in the comments.
-1. Add your homepage content in `_pages/about.md`.
-    1. You can use html+markdown syntax just same as jekyll.
-    1. You can use a `<span>` tag with class `show_paper_citations` and attribute `data` to display the citations of your paper. Set the data to the google scholar paper ID. For
-        ```html
-        <span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span>
-        ``` 
-        > Q: How to get the google scholar paper ID?   
-        > A: Enter your google scholar homepage and click the paper name. Then you can see the paper ID from `citation_for_view=XXXX`, where `XXXX` is the required paper ID.
-1. Your page will be published at `https://USERNAME.github.io`.
+```
+python -m http.server 8000
+```
 
-## Debug Locally
+然后打开 http://localhost:8000
 
-1. Clone your REPO to local using `git clone`.
-1. Install Jekyll building environment, including `Ruby`, `RubyGems`, `GCC` and `Make` following [the installation guide](https://jekyllrb.com/docs/installation/#requirements).
-1. Run `bash run_server.sh` to start Jekyll livereload server.
-1. Open http://127.0.0.1:4000 in your browser.
-1. If you change the source code of the website, the livereload server will automatically refresh.
-1. When you finish the modification of your homepage, `commit` your changings and `push` to your remote REPO using `git` command.
+## 部署到 GitHub
 
-# Acknowledges
+仓库名必须是 `NathanWang3.github.io`（已有，是 fork 的旧模板）。把旧内容整体替换：
 
-- AcadHomepage incorporates Font Awesome, which is distributed under the terms of the SIL OFL 1.1 and MIT License.
-- AcadHomepage is influenced by the github repo [mmistakes/minimal-mistakes](https://github.com/mmistakes/minimal-mistakes), which is distributed under the MIT License.
-- AcadHomepage is influenced by the github repo [academicpages/academicpages.github.io](https://github.com/academicpages/academicpages.github.io), which is distributed under the MIT License.
+```
+git clone https://github.com/NathanWang3/NathanWang3.github.io.git
+cd NathanWang3.github.io
+git rm -r -q .                # 清掉旧模板
+cp -r <本目录>/* <本目录>/.nojekyll .
+git add -A
+git commit -m "Rebuild personal site as static bilingual page"
+git push
+```
+
+推送后 GitHub Pages 通常 1–2 分钟生效：https://nathanwang3.github.io/
+
+如果仓库 Settings → Pages 里的 Source 还是 "Deploy from a branch / main / (root)" 就不用动。
+
+## 打印成 PDF
+
+浏览器 Ctrl+P → 另存为 PDF，已做打印样式（隐藏导航、按钮，状态标签转为描边）。
