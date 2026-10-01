@@ -8,7 +8,7 @@ window.SITE = {
 
   // ---------- 语言 ----------
   defaultLang:    "en",     // "en" | "zh" | "auto"（auto = 跟浏览器）
-  showLangToggle: false,    // false = 隐藏右上角切换按钮，整站只显示 defaultLang
+  showLangToggle: true,     // false = 隐藏右上角切换按钮，整站只显示 defaultLang
 
   // ---------- 基本信息 ----------
   name:      { en: "Nan (Nathan) Wang",  zh: "王 楠" },
@@ -176,6 +176,7 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
     // ===== 2020 =====
     {
       status: "published",
+      kind: "conference",
       year: "2020",
       title: "Nonstationary regional flood inundation projection under climate change: a case study of Athabasca River Basin, Canada",
       authors: "G. Cheng, G. Huang, F. Wang, <b>N. Wang</b>, J. Zhang, K. Li, C. Dong",
@@ -245,11 +246,17 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
   // ---------- 技能 ----------
   skills: [
     { group: { en: "Modelling frameworks", zh: "建模框架" },
-      items: ["CGE / DCGE", "MRIO", "GTAP", "GCAM", "Ecological Network Analysis", "Structural Decomposition Analysis", "Factorial Design"] },
+      items: ["CGE / DCGE", "MRIO", "GTAP", "GCAM",
+              { en: "Ecological Network Analysis",       zh: "生态网络分析（ENA）" },
+              { en: "Structural Decomposition Analysis", zh: "结构分解分析（SDA）" },
+              { en: "Factorial Design",                  zh: "因子设计" }] },
     { group: { en: "Software & languages", zh: "软件与语言" },
       items: ["GAMS", "LINGO", "Python", "R", "MATLAB", "ArcGIS / ArcSWAT", "SWAT"] },
     { group: { en: "Domain", zh: "领域" },
-      items: ["Hydropower planning", "Water resources allocation", "Virtual water & water footprint", "Heavy-metal emission accounting"] }
+      items: [{ en: "Hydropower planning",             zh: "水电规划" },
+              { en: "Water resources allocation",      zh: "水资源配置" },
+              { en: "Virtual water & water footprint", zh: "虚拟水与水足迹" },
+              { en: "Heavy-metal emission accounting", zh: "重金属排放核算" }] }
   ],
 
   // ---------- 学术服务 ----------
@@ -279,7 +286,7 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
     inProgress:  { en: "Work in progress", zh: "在研工作" },
     firstAuthor: { en: "First author", zh: "第一作者" },
     stats: {
-      publications: { en: "Publications",        zh: "已发表" },
+      publications: { en: "Publications",        zh: "发表成果" },
       firstAuthor:  { en: "First-author",        zh: "第一作者" },
       journals:     { en: "Journals",            zh: "期刊" },
       hIndex:       { en: "h-index",             zh: "h 指数" },
@@ -297,5 +304,5 @@ I am currently seeking postdoctoral, faculty and research-scientist positions in
     footer: { en: "Last updated", zh: "最近更新" }
   },
 
-  lastUpdated: "2026-09-28"
+  lastUpdated: "2026-09-30"
 };

@@ -86,8 +86,10 @@
     var pubs = (S.publications || []).filter(function (p) { return p.status === "published" || p.status === "accepted"; });
     var journals = {};
     pubs.forEach(function (p) {
-      if ((p.tags || []).indexOf("Conference abstract") >= 0 || /abstract/i.test(t(p.note))) return;
-      var v = t(p.venue).split(",")[0].trim();
+      // language-independent: always read the English fields
+      var note = (p.note && p.note.en) || "", venue = (p.venue && p.venue.en) || "";
+      if (p.kind === "conference" || /abstract/i.test(note)) return;
+      var v = venue.split(",")[0].trim();
       if (v) journals[v] = 1;
     });
     var out = [
@@ -168,7 +170,9 @@
       var box = document.getElementById(id); box.innerHTML = "";
       (items || []).forEach(function (it) {
         var d = el("div", "tl-item");
-        d.appendChild(el("div", "tl-period", esc(it.period || "")));
+        var period = it.period || "";
+        if (lang === "zh") period = period.replace(/present/i, "至今");
+        d.appendChild(el("div", "tl-period", esc(period)));
         d.appendChild(el("p", "tl-role", esc(t(it[roleKey]))));
         d.appendChild(el("p", "tl-org", esc(t(it.org))));
         if (t(it.desc)) d.appendChild(el("p", "tl-desc", esc(t(it.desc))));
@@ -184,7 +188,7 @@
       var d = el("div", "skill-group");
       d.appendChild(el("h3", null, esc(t(g.group))));
       var chips = el("div", "skill-chips");
-      (g.items || []).forEach(function (c) { chips.appendChild(el("span", "chip", esc(c))); });
+      (g.items || []).forEach(function (c) { chips.appendChild(el("span", "chip", esc(t(c)))); });
       d.appendChild(chips);
       sk.appendChild(d);
     });
